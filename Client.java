@@ -5,6 +5,7 @@ import org.omg.PortableServer.POAHelper;
 import org.omg.CosNaming.NameComponent;
 import org.omg.CosNaming.NamingContext;
 import org.omg.CosNaming.NamingContextHelper;
+import javax.swing.JOptionPane;
 
 public class Client {
 
@@ -15,7 +16,7 @@ public class Client {
             Properties props = System.getProperties();
             props.put("org.omg.CORBA.ORBInitialPort", "1050");
             //Replace MyHost with the name of the host on which you are running the server
-            props.put("org.omg.CORBA.ORBInitialHost", JOptionPane.showInputDialog(null,"Ingrese dirección del cliente:"));
+            props.put("org.omg.CORBA.ORBInitialHost", "192.168.0.12");
             ORB orb = ORB.init(args, props);
             System.out.println("Initialized ORB");
 
@@ -29,7 +30,7 @@ public class Client {
 
             //Resolve MessageServer
             MessageServer msgServer = MessageServerHelper.narrow(
-                orb.string_to_object("corbaname:iiop:1.2@localhost:1050#MessageServer"));
+                orb.string_to_object("corbaname:iiop:192.168.0.12:1050#MessageServer"));
 
             //Register listener reference (callback object) with MessageServer
             msgServer.register(ref);

@@ -1,10 +1,11 @@
+import java.util.Properties;
 import org.omg.CORBA.ORB;
 import org.omg.PortableServer.POA;
 import org.omg.PortableServer.POAHelper;
 import org.omg.CosNaming.NameComponent;
 import org.omg.CosNaming.NamingContext;
 import org.omg.CosNaming.NamingContextHelper;
-import java.util.Properties;
+import javax.swing.JOptionPane;
 
 public class Server {
 
@@ -14,7 +15,7 @@ public class Server {
             Properties props = System.getProperties();
             props.put("org.omg.CORBA.ORBInitialPort", "1050");
             //Replace MyHost with the name of the host on which you are running the server
-            props.put("org.omg.CORBA.ORBInitialHost", JOptionPane.showInputDialog(null,"Ingrese dirección del server:"));
+            props.put("org.omg.CORBA.ORBInitialHost", "192.168.0.12");
             ORB orb = ORB.init(args, props);
             System.out.println("Initialized ORB");
 
