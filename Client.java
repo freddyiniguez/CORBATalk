@@ -12,7 +12,7 @@ public class Client {
     public static void main(String[] args) {
         try {
         
-            //initialize orb
+            //Initialize orb
             Properties props = System.getProperties();
             props.put("org.omg.CORBA.ORBInitialPort", "1050");
             //Replace MyHost with the name of the host on which you are running the server
@@ -40,7 +40,6 @@ public class Client {
             rootPOA.the_POAManager().activate();
 
             //Wait for messages
-            System.out.println("Wait for incoming messages");
             orb.run();
 
         } catch (Exception e) {

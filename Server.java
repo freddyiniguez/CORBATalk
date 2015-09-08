@@ -38,11 +38,9 @@ public class Server {
             rootPOA.the_POAManager().activate();
 
             //Start readthread and wait for incoming requests
-            System.out.println("Server ready and running ....");
-            
-            //REMOVE THE NEXT LINE FOR THE SIMPLER EXAMPLE
+            System.out.println("\n\t\t\t\t__W_E_L_C_O_M_E__");
+            System.out.println("\t\tCORBATalk: Distributed Messages System\n");
             msImpl.startReadThread();
-            
             orb.run();
 
         } catch (Exception e) {

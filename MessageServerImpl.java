@@ -25,14 +25,10 @@ public class MessageServerImpl extends MessageServerPOA {
         while (it.hasNext()) {
             Listener lt = (Listener) it.next();
             lt.message(msg);
-            //FOR THE SIMPLER EXAMPLE, ADD A SIMPLE
-            //MESSAGE TO BE CALLED BACK, FOR EXAMPLE,
-            //SLEEP FOR 30 SECONDS, THEN SEND THE TIME
         }
     }
 }
 
-//EXCLUDE THIS CLASS FOR THE SIMPLER EXAMPLE
 class ReadThread extends Thread {
 
     MessageServerImpl msImpl = null;
@@ -47,7 +43,7 @@ class ReadThread extends Thread {
 
         try {
             for (;;) {
-                System.out.print("message > ");
+                System.out.print("CORBATalk > ");
                 String msg = br.readLine();
                 msImpl.message(msg);
             }

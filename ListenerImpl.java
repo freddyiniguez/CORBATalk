@@ -1,6 +1,11 @@
 public class ListenerImpl extends ListenerPOA {
+	MessageServerWindow w;
+
+	public ListenerImpl(){
+		this.w = new MessageServerWindow();
+	}
 
     public void message(String msg) {
-        System.out.println("Message from server : " + msg);
+     	w.print(msg);
     }
 }
