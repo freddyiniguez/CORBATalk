@@ -1,0 +1,6 @@
+interface Listener {
+	void message(in string msg);
+};
+interface MessageServer {
+ 	void register(in Listener lt);
+};
